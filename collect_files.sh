@@ -1,7 +1,7 @@
 #!/bin/sh
 pwd
 
-read input_dir;
-read output_dir;
+input_dir = $1;
+output_dir = $2;
 
 done;
