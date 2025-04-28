@@ -1,6 +1,7 @@
 #!/bin/sh
-read input_dir;
-until who|grep -q "$input_dir";
-do
-    read output_dir;
-done;
+if [ $# -ne 2 ]; then
+  exit 1
+fi
+
+INPUT_DIR=$1
+OUTPUT_DIR=$2
