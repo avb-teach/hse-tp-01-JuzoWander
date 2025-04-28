@@ -9,7 +9,7 @@ if [$# -ne 2]; then
   max_depth=$3
 fi
 
-for file in $(find "$INPUT_DIR" -type f); do
+for file in $(find "$INPUT_DIR" -maxdepth "$max_depth" -type f); do
   name=$(basename "$file")
   new_file_dir="$2/$name"
   ind=1
