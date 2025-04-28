@@ -1,7 +1,6 @@
 #!/bin/sh
-pwd
-
-input_dir = $1;
-output_dir = $2;
-
+read input_dir;
+until who|grep -q "$input_dir";
+do
+    read output_dir;
 done;
