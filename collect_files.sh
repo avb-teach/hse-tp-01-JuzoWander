@@ -11,13 +11,11 @@ fi
 
 for file in $(find "$INPUT_DIR" -type f); do
   name=$(basename "$file")
-  old_dir=${file#*/}
-  new_file_dir="$2/$old_dir"
+  new_file_dir="$2/$name"
   ind=1
   while [-f "$new_file_dir"];do
-    new_path=${new_file_dir%/*}
-    new_file_dir="$new_path/${name%.*}$ind.${name##*.}"
-    ((i++))
+    new_file_dir="$OUTPUT_DIR/${name%.*}$ind.${name##*.}"
+    ((ind++))
   done
   cp "$file" "$new_file_dir"
 done
